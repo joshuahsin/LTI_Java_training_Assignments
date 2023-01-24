@@ -1,0 +1,26 @@
+Scenario 1:
+Inheritance is not needed since mode of travel
+can be a separate field in the ticket class.
+Additionally, all travel types are distinct.
+Therefore, all objects will have the same fields
+(char mode of travel, String source, String destination,
+String date and time, String ticket details, 
+char travel class type). One class can be created 
+from this information and ticket price can be found.
+
+Scenario 2:
+All classes could share a superclass with a 
+list of destinations, although one may or may not
+want to since a one way taxi only has one designation.
+Assuming that this wouldn't be ideal. One class
+would be specific to one way tickets. This class
+would include a destination, kilometers traveled and 
+a method to return the price - kilometers * 2. 
+One day and package tickets could share a superclass
+with number of people and destinations. One day
+tickets would have a method that multiples the
+per person rate with the number of people to
+get the rate and the bus number. Package tickets 
+would have the travel schedule and its own function
+to calculate and return price.
+
