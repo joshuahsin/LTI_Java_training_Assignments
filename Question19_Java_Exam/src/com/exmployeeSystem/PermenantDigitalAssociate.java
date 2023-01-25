@@ -2,9 +2,11 @@ package com.exmployeeSystem;
 
 public class PermenantDigitalAssociate extends DigitalAssociate {
 	private int technicalCertifications;
+	private int yearsOfExperience;
 
-	public PermenantDigitalAssociate(int yearsOfExperience, String employeeType, int technicalCertifications) {
-		super(yearsOfExperience, employeeType);
+	public PermenantDigitalAssociate(int employeeId, int yearsOfExperience, String employeeType, int technicalCertifications) {
+		super(employeeId, employeeType);
+		this.yearsOfExperience = yearsOfExperience;
 		this.technicalCertifications = technicalCertifications;
 	}
 	

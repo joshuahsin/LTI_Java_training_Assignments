@@ -1,12 +1,12 @@
 package com.exmployeeSystem;
 
 public class DigitalAssociate implements Employee{
-	protected int yearsOfExperience;
 	protected String employeeType;
+	protected int employeeId;
 	
-	public DigitalAssociate(int yearsOfExperience, String employeeType) {
+	public DigitalAssociate(int employeeId, String employeeType) {
 		super();
-		this.yearsOfExperience = yearsOfExperience;
+		this.employeeId = employeeId;
 		this.employeeType = employeeType;
 	}
 
@@ -20,6 +20,12 @@ public class DigitalAssociate implements Employee{
 	public int getMediclaimCoverage() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public int getEmployeeId() {
+		// TODO Auto-generated method stub
+		return this.employeeId;
 	}
 
 }

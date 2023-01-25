@@ -4,8 +4,8 @@ public class ContractDigitalAssociate extends DigitalAssociate{
 	private int wageRate;
 	private int hours;
 	
-	public ContractDigitalAssociate(int yearsOfExperience, String employeeType, int wageRate, int hours) {
-		super(yearsOfExperience, employeeType);
+	public ContractDigitalAssociate(int employeeId, String employeeType, int wageRate, int hours) {
+		super(employeeId, employeeType);
 		this.wageRate = wageRate;
 		this.hours = hours;
 	}

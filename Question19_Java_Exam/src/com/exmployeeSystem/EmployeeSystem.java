@@ -10,27 +10,39 @@ public class EmployeeSystem {
 		 empList = new ArrayList<Employee>();
 	}
 	
-	public void addEmployee(String employeeTitle, char employeeType, int yearsOfExperience) {
+	public Employee findEmployee(int employeeId) {
+		for(Employee e: empList) {
+			if(e.getEmployeeId() == employeeId) {
+				return e;
+			}
+		}
+		return null;
+	}
+	
+	public void addEmployee(int employeeId, String employeeTitle, char employeeType) {
 		Employee e = null;
+		Scanner s = new Scanner(System.in);
 		if(employeeTitle.equals("Project Manager")) {
-			e = new ProjectManager(yearsOfExperience);
+			System.out.println("Please enter years of experience for Project Manager: ");
+			int yearsOfExperience = s.nextInt();
+			e = new ProjectManager(employeeId, yearsOfExperience);
 		}
 		else {
 			if(employeeType == 'p') {
-				Scanner s = new Scanner(System.in);
-				System.out.print("Please enter number of technical certifications: ");
+				System.out.println("Please enter years of experience for permenant Digital Associate: ");
+				int yearsOfExperience = s.nextInt();
+				System.out.print("Please enter number of technical certifications for permenant Digital Associate: ");
 				int technicalCertifications = s.nextInt();
-				e = new PermenantDigitalAssociate(yearsOfExperience, employeeTitle, technicalCertifications);
-				s.close();
+				e = new PermenantDigitalAssociate(employeeId, yearsOfExperience, employeeTitle, technicalCertifications);
+				//s.close();
 			}
-			else {
-				Scanner s = new Scanner(System.in);
-				System.out.print("Please enter wage rate: ");
+			else {;
+				System.out.print("Please enter wage rate for contract Digital Associate: ");
 				int wageRate= s.nextInt();
-				System.out.print("Please enter wage hours: ");
+				System.out.print("Please enter wage hours for contract Digital Associate: ");
 				int workHours = s.nextInt();
-				e = new ContractDigitalAssociate(yearsOfExperience, employeeTitle, wageRate, workHours);
-				s.close();
+				e = new ContractDigitalAssociate(employeeId, employeeTitle, wageRate, workHours);
+				//s.close();
 			}
 		}
 		empList.add(e);
